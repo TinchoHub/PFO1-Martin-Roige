@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martin Roige | Desarrollador Full Stack</title>
+  <meta name="description"
+    content="Portfolio de Martin Roige, desarrollador full stack: React, Node.js y .NET. Habilidades, proyectos y contacto.">
+
+  <!-- Open Graph y Metadatos de Redes -->
+  <meta property="og:title" content="Martin Roige | Desarrollador Full Stack">
+  <meta property="og:description"
+    content="Portfolio de Martin Roige, desarrollador full stack: React, Node.js y .NET. Habilidades, proyectos y contacto.">
+  <meta property="og:type" content="profile">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts: Inter & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Datos Estructurados JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Martin Roige",
+    "jobTitle": "Desarrollador Full Stack",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Buenos Aires",
+      "addressCountry": "AR"
+    },
+    "knowsAbout": ["React", "Node.js", "C#", ".NET", "MySQL"],
+    "sameAs": ["https://github.com/TinchoHub"]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Accesibilidad: Enlace directo para lectores de pantalla y navegación por teclado -->
+  <a href="#main-content" class="sr-only focus-skip">Saltar al contenido</a>
+
+  <!-- COMENTARIO 1: Encabezado semántico (<header>) con navegación principal, menú accesible responsive y enlace prioritario a GitHub -->
+  <header class="main-header" role="banner">
+    <nav class="nav-container" aria-label="Navegación principal">
+      <a href="#hero" class="nav-brand" aria-label="Inicio">
+        <span class="brand-bracket">&lt;</span>Martin Roige<span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <!-- Menú de escritorio -->
+      <ul class="nav-menu" role="menubar">
+        <li role="none"><a href="#sobre-mi" class="nav-link" role="menuitem">Sobre mí</a></li>
+        <li role="none"><a href="#habilidades" class="nav-link" role="menuitem">Habilidades</a></li>
+        <li role="none"><a href="#proyectos" class="nav-link" role="menuitem">Proyectos</a></li>
+        <li role="none"><a href="#intereses" class="nav-link" role="menuitem">Intereses</a></li>
+        <li role="none"><a href="#contacto" class="nav-link" role="menuitem">Contacto</a></li>
+      </ul>
+
+      <!-- Enlace visible y prioritario al perfil de GitHub -->
+      <div class="nav-actions">
+        <a href="https://github.com/TinchoHub" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-nav"
+          aria-label="Visitar mi perfil de GitHub (abre en nueva pestaña)">
+          <svg class="icon-svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+            <path d="M9 18c-4.51 2-5-2-7-2" />
+          </svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+
+      <!-- Control de menú móvil basado en CSS nativo (sin dependencias JS) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Abrir o cerrar menú móvil">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Menú">
+        <svg class="icon-svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>
+      </label>
+    </nav>
+
+    <!-- Menú desplegable para móviles -->
+    <div class="nav-mobile-menu">
+      <a href="#sobre-mi" class="nav-mobile-link">Sobre mí</a>
+      <a href="#habilidades" class="nav-mobile-link">Habilidades</a>
+      <a href="#proyectos" class="nav-mobile-link">Proyectos</a>
+      <a href="#intereses" class="nav-mobile-link">Intereses</a>
+      <a href="#contacto" class="nav-mobile-link">Contacto</a>
+      <a href="https://github.com/TinchoHub" target="_blank" rel="noopener noreferrer"
+        class="btn btn-primary w-full text-center">GitHub</a>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal (<main>) -->
+  <main id="main-content">
+
+    <!-- Hero Section con badge de estado, terminal simulada e interactividad CSS -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-title">
+      <div class="hero-bg-grid" aria-hidden="true"></div>
+      <div class="hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow-2" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <div class="hero-header">
+          <div class="badge-status">
+            <span class="status-indicator">
+              <span class="pulse-ring"></span>
+              <span class="pulse-dot"></span>
+            </span>
+            Disponible para nuevos proyectos
+          </div>
+
+          <div class="hero-intro">
+            <!-- Avatar de perfil -->
+            <div class="hero-avatar-wrapper">
+              <img src="assets/perfil.png" alt="Fotografía de perfil de Martin Roige" class="hero-avatar" width="140"
+                height="140">
+            </div>
+
+            <!-- Titular -->
+            <div class="hero-title-group">
+              <div class="badge-status">...</div>
+              <h1 id="hero-title" class="hero-title">
+                Hola, soy<br>
+                <span class="text-gradient">Martin Roige</span>
+              </h1>
+            </div>
+          </div>
+
+          <p class="hero-subtitle">Desarrollador de Software &amp; Web enfocado en crear soluciones escalables,
+            interfaces intuitivas y arquitecturas robustas.</p>
+
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary">
+              <svg class="icon-svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+              </svg>
+              <span>Iniciar contacto</span>
+              <svg class="icon-svg icon-arrow" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </a>
+            <a href="https://github.com/TinchoHub" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <svg class="icon-svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                <path d="M9 18c-4.51 2-5-2-7-2" />
+              </svg>
+              <span>Ver proyectos en GitHub</span>
+            </a>
+          </div>
+
+          <!-- Métricas clave del Hero -->
+          <dl class="hero-stats">
+            <div class="stat-card rainbow-border">
+              <dt class="sr-only">Frontend + Backend</dt>
+              <dd class="stat-value">Full Stack</dd>
+              <p class="stat-label">Frontend + Backend</p>
+            </div>
+            <div class="stat-card rainbow-border">
+              <dt class="sr-only">Stack principal</dt>
+              <dd class="stat-value">React / .NET</dd>
+              <p class="stat-label">Stack principal</p>
+            </div>
+            <div class="stat-card rainbow-border">
+              <dt class="sr-only">Modalidad de trabajo</dt>
+              <dd class="stat-value">Remoto</dd>
+              <p class="stat-label">Modalidad de trabajo</p>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Ventana de Terminal de Código en el Hero -->
+        <div class="terminal-wrapper">
+          <div class="terminal-glow" aria-hidden="true"></div>
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="terminal-title">~ /dev/portfolio</span>
+            </div>
+            <div class="terminal-body font-mono">
+              <div><span class="code-keyword">const</span> <span class="code-var">developer</span> <span
+                  class="code-operator">=</span> {</div>
+              <div class="code-indent"><span class="code-prop">nombre</span>: <span class="code-string">"Martin
+                  Roige"</span>,</div>
+              <div class="code-indent"><span class="code-prop">rol</span>: <span class="code-string">'Full Stack
+                  Developer'</span>,</div>
+              <div class="code-indent"><span class="code-prop">stack</span>: [<span class="code-string">'React'</span>,
+                <span class="code-string">'Node.js'</span>, <span class="code-string">'.NET'</span>],</div>
+              <div class="code-indent"><span class="code-prop">disponible</span>: <span class="code-boolean">true</span>
+              </div>
+              <div>}<span class="cursor-blink">|</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banda Decorativa de Roadmap 01 -->
+    <div class="roadmap-band" aria-hidden="true">
+      <div class="roadmap-badge">01 · Fundamentos</div>
+    </div>
+
+    <!-- COMENTARIO 2: Sección Sobre Mí (<section>) con maquetación de 2 columnas, imagen optimizada y tarjetas de valor -->
+    <section id="sobre-mi" class="section about-section" aria-labelledby="about-title">
+      <div class="container grid-two-columns">
+        <div class="about-visual">
+          <div class="about-glow" aria-hidden="true"></div>
+          <div class="about-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80"
+              alt="Espacio de trabajo con monitor mostrando código, teclado mecánico y libreta de notas"
+              class="about-img" loading="lazy" width="800" height="600">
+            <div class="image-overlay" aria-hidden="true"></div>
+          </div>
+          <div class="floating-badge">
+            <svg class="icon-svg text-brand" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+            <span>Clean Code</span>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <span class="section-eyebrow">
+            <svg class="icon-svg" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+            Sobre mí
+          </span>
+          <h2 id="about-title" class="section-title">
+            Apasionado por transformar<br>
+            <span class="text-brand">problemas en soluciones</span>
+          </h2>
+          <p class="text-lead">Soy un desarrollador apasionado por la resolución de problemas lógicos y la creación de
+            herramientas digitales que generen impacto. Mi enfoque combina rigurosidad técnica, buenas prácticas de
+            código limpio y constante aprendizaje.</p>
+          <p class="text-lead">Disfruto trabajar en el ciclo completo de desarrollo: desde el diseño y modelado de datos
+            hasta la implementación de interfaces accesibles y eficientes.</p>
+
+          <div class="about-cards-grid">
+            <div class="card card-glow rainbow-border">
+              <p class="card-metric-title">Full cycle</p>
+              <p class="card-metric-desc">Del modelado de datos a la UI</p>
+            </div>
+            <div class="card card-glow rainbow-border">
+              <p class="card-metric-title">Clean Code</p>
+              <p class="card-metric-desc">Buenas prácticas de diseño</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banda Decorativa de Roadmap 02 -->
+    <div class="roadmap-band" aria-hidden="true">
+      <div class="roadmap-badge">02 · Interactividad</div>
+    </div>
+
+    <!-- COMENTARIO 3: Sección de Habilidades Técnicas estructurada con CSS Grid bidimensional y elementos accesibles (<article>) -->
+    <section id="habilidades" class="section skills-section" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Habilidades</span>
+          <h2 id="skills-title" class="section-title">Habilidades <span class="text-brand">Técnicas</span></h2>
+          <p class="section-subtitle">Tecnologías y herramientas que utilizo para transformar ideas en código funcional.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Tarjeta Frontend -->
+          <article class="card card-glow rainbow-border" tabindex="0">
+            <div class="card-icon-box">
+              <svg class="icon-svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="14" x="2" y="3" rx="2" />
+                <line x1="8" x2="16" y1="21" y2="21" />
+                <line x1="12" x2="12" y1="17" y2="21" />
+              </svg>
+            </div>
+            <h3 class="card-title">Frontend</h3>
+            <p class="card-desc">Desarrollo de interfaces semánticas, reactivas y accesibles bajo estándares web
+              modernos.</p>
+            <ul class="tag-list" aria-label="Tecnologías Frontend">
+              <li class="tag">HTML5</li>
+              <li class="tag">CSS3 / Flexbox / Grid</li>
+              <li class="tag">JavaScript (ES6+)</li>
+              <li class="tag">React</li>
+            </ul>
+          </article>
+
+          <!-- Tarjeta Backend -->
+          <article class="card card-glow rainbow-border" tabindex="0">
+            <div class="card-icon-box">
+              <svg class="icon-svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="8" x="2" y="2" rx="2" ry="2" />
+                <rect width="20" height="8" x="2" y="14" rx="2" ry="2" />
+                <line x1="6" x2="6.01" y1="6" y2="6" />
+                <line x1="6" x2="6.01" y1="18" y2="18" />
+              </svg>
+            </div>
+            <h3 class="card-title">Backend &amp; APIs</h3>
+            <p class="card-desc">Construcción de lógica de negocio, arquitectura de servicios RESTful y seguridad.</p>
+            <ul class="tag-list" aria-label="Tecnologías Backend &amp; APIs">
+              <li class="tag">Node.js</li>
+              <li class="tag">Express</li>
+              <li class="tag">C# / .NET</li>
+              <li class="tag">REST APIs</li>
+            </ul>
+          </article>
+
+          <!-- Tarjeta Bases de Datos & Tools -->
+          <article class="card card-glow rainbow-border" tabindex="0">
+            <div class="card-icon-box">
+              <svg class="icon-svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M3 5V19A9 3 0 0 0 21 19V5" />
+                <path d="M3 12A9 3 0 0 0 21 12" />
+              </svg>
+            </div>
+            <h3 class="card-title">Bases de Datos &amp; Tools</h3>
+            <p class="card-desc">Diseño relacional, consultas optimizadas y control de versiones colaborativo.</p>
+            <ul class="tag-list" aria-label="Tecnologías Bases de Datos &amp; Tools">
+              <li class="tag">MySQL</li>
+              <li class="tag">Git</li>
+              <li class="tag">GitHub</li>
+              <li class="tag">Vercel</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banda Decorativa de Roadmap 03 -->
+    <div class="roadmap-band" aria-hidden="true">
+      <div class="roadmap-badge">03 · Full Stack</div>
+    </div>
+
+    <!-- Sección de Proyectos Destacados (Integrada con enlaces a repositorios y diseño card-glow) -->
+    <section id="proyectos" class="section projects-section" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Proyectos</span>
+          <h2 id="projects-title" class="section-title">Trabajos y <span class="text-brand">experimentos</span></h2>
+          <p class="section-subtitle">Una selección de desarrollos donde combino lógica, arquitectura y experiencia de
+            uso.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Proyecto 1 -->
+          <a href="https://github.com/TinchoHub" target="_blank" rel="noopener noreferrer"
+            class="card card-glow project-card rainbow-border">
+            <div class="project-card-header">
+              <div class="card-icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="6" cy="19" r="3" />
+                  <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" />
+                  <circle cx="18" cy="5" r="3" />
+                </svg>
+              </div>
+              <svg class="icon-svg icon-arrow-diagonal" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
+            </div>
+            <h3 class="card-title">WareHouse y Logística</h3>
+            <p class="card-desc">Desarrollo de una aplicación web para la asignación y control de turnos de proveedores
+              acorde a órdenes de compras realizadas.</p>
+            <ul class="tag-list">
+              <li class="tag">React</li>
+              <li class="tag">Node.js</li>
+              <li class="tag">Algoritmos</li>
+            </ul>
+          </a>
+
+          <!-- Proyecto 2 -->
+          <a href="https://github.com/TinchoHub" target="_blank" rel="noopener noreferrer"
+            class="card card-glow project-card rainbow-border">
+            <div class="project-card-header">
+              <div class="card-icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="7" height="9" x="3" y="3" rx="1" />
+                  <rect width="7" height="5" x="14" y="3" rx="1" />
+                  <rect width="7" height="9" x="14" y="12" rx="1" />
+                  <rect width="7" height="5" x="3" y="16" rx="1" />
+                </svg>
+              </div>
+              <svg class="icon-svg icon-arrow-diagonal" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
+            </div>
+            <h3 class="card-title">Panel de gestión con API REST</h3>
+            <p class="card-desc">CRUD completo con autenticación, roles y reportes. Backend en .NET con capa de
+              servicios y base de datos relacional.</p>
+            <ul class="tag-list">
+              <li class="tag">C# / .NET</li>
+              <li class="tag">MySQL</li>
+              <li class="tag">REST</li>
+            </ul>
+          </a>
+
+          <!-- Proyecto 3 -->
+          <a href="https://github.com/TinchoHub" target="_blank" rel="noopener noreferrer"
+            class="card card-glow project-card rainbow-border">
+            <div class="project-card-header">
+              <div class="card-icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20v2M12 2v2M17 20v2M17 2v2M2 12h2M2 17h2M2 7h2M20 12h2M20 17h2M20 7h2M7 20v2M7 2v2" />
+                  <rect x="4" y="4" width="16" height="16" rx="2" />
+                  <rect x="8" y="8" width="8" height="8" rx="1" />
+                </svg>
+              </div>
+              <svg class="icon-svg icon-arrow-diagonal" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+              </svg>
+            </div>
+            <h3 class="card-title">Monitor de sensores IoT</h3>
+            <p class="card-desc">Lectura de microcontroladores y visualización de métricas en tiempo real con alertas
+              configurables.</p>
+            <ul class="tag-list">
+              <li class="tag">JavaScript</li>
+              <li class="tag">Arduino</li>
+              <li class="tag">WebSockets</li>
+            </ul>
+          </a>
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="https://github.com/TinchoHub?tab=repositories" target="_blank" rel="noopener noreferrer"
+            class="btn btn-secondary">
+            <svg class="icon-svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+              <path d="M9 18c-4.51 2-5-2-7-2" />
+            </svg>
+            <span>Ver todos los repositorios</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banda Decorativa de Roadmap 04 -->
+    <div class="roadmap-band" aria-hidden="true">
+      <div class="roadmap-badge">04 · Datos &amp; Expansión</div>
+    </div>
+
+    <!-- Sección Personal a Elección: Intereses & Proyección -->
+    <section id="intereses" class="section interests-section" aria-labelledby="personal-title">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Intereses &amp; Proyección</span>
+          <h2 id="personal-title" class="section-title">
+            Áreas de exploración que<br>
+            <span class="text-brand">motivan mi aprendizaje</span>
+          </h2>
+        </div>
+
+        <div class="interests-grid">
+          <div class="card card-glow interest-card rainbow-border">
+            <div class="card-icon-box icon-gold">
+              <svg class="icon-svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+                <path d="M15 18H9" />
+                <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+                <circle cx="17" cy="18" r="2" />
+                <circle cx="7" cy="18" r="2" />
+              </svg>
+            </div>
+            <h3 class="card-title">Logística y Última Milla</h3>
+            <p class="card-desc">Interés por el desarrollo de algoritmos de ruteo, geolocalización y optimización de
+              despachos en tiempo real.</p>
+          </div>
+
+          <div class="card card-glow interest-card rainbow-border">
+            <div class="card-icon-box icon-gold">
+              <svg class="icon-svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20v2M12 2v2M17 20v2M17 2v2M2 12h2M2 17h2M2 7h2M20 12h2M20 17h2M20 7h2M7 20v2M7 2v2" />
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <rect x="8" y="8" width="8" height="8" rx="1" />
+              </svg>
+            </div>
+            <h3 class="card-title">Automatización &amp; IoT</h3>
+            <p class="card-desc">Exploración de microcontroladores y sensores para el control inteligente de procesos y
+              automatización técnica.</p>
+          </div>
+
+          <div class="card card-glow interest-card rainbow-border">
+            <div class="card-icon-box icon-gold">
+              <svg class="icon-svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="6" x2="10" y1="11" y2="11" />
+                <line x1="8" x2="8" y1="9" y2="13" />
+                <line x1="15" x2="15.01" y1="12" y2="12" />
+                <line x1="18" x2="18.01" y1="10" y2="10" />
+                <path
+                  d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z" />
+              </svg>
+            </div>
+            <h3 class="card-title">Lógica en Videojuegos RPG</h3>
+            <p class="card-desc">Análisis de mecánicas de progresión, árboles de habilidades y diseño de sistemas
+              interactivos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMENTARIO 4: Formulario de contacto accesible con validación nativa, etiquetas <label> obligatorias y aviso en vivo -->
+    <section id="contacto" class="section contact-section" aria-labelledby="contact-title">
+      <div class="container max-w-form">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Contacto</span>
+          <h2 id="contact-title" class="section-title">
+            ¿Tenés una propuesta<br>
+            <span class="text-brand">o consulta?</span>
+          </h2>
+          <p class="section-subtitle">Enviame un mensaje directo y te responderé a la brevedad.</p>
+
+          <div class="contact-meta-list">
+            <span class="meta-item">
+              <svg class="icon-svg text-brand" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Buenos Aires, Argentina
+            </span>
+            <a href="https://github.com/TinchoHub" target="_blank" rel="noopener noreferrer"
+              class="meta-item meta-link">
+              <svg class="icon-svg text-brand" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                <path d="M9 18c-4.51 2-5-2-7-2" />
+              </svg>
+              github.com/TinchoHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <form class="contact-form rainbow-border" action="#" method="POST"
+          aria-label="Formulario de contacto profesional">
+          <div class="form-group">
+            <label for="nombre" class="form-label">Nombre y Apellido <span class="required"
+                aria-hidden="true">*</span></label>
+            <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Ej. Juan Perez" required
+              minlength="3">
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Correo Electrónico <span class="required"
+                aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="juanperez@ejemplo.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="motivo" class="form-label">Motivo de contacto</label>
+            <select id="motivo" name="motivo" class="form-select">
+              <option value="oportunidad">Oportunidad laboral</option>
+              <option value="freelance">Proyecto freelance</option>
+              <option value="colaboracion">Colaboración técnica</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje" class="form-label">Mensaje <span class="required" aria-hidden="true">*</span></label>
+            <textarea id="mensaje" name="mensaje" rows="5" class="form-textarea"
+              placeholder="Escribí aquí los detalles de tu consulta..." required minlength="10"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <svg class="icon-svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" />
+              <path d="m21.854 2.147-10.94 10.939" />
+            </svg>
+            <span>Enviar mensaje</span>
+          </button>
+
+          <p aria-live="polite" class="form-disclaimer">Tus datos solo se usan para responder tu consulta.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Semántico (<footer>) -->
+  <footer class="main-footer" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-copy">
+        <span class="footer-brand"><span class="brand-bracket">&lt;</span>Martin Roige<span
+            class="brand-bracket">/&gt;</span></span>
+        <span class="footer-divider">·</span>
+        <p>&copy; 2026 Martin Roige. Todos los derechos reservados.</p>
+      </div>
+
+      <div class="footer-actions">
+        <a href="https://github.com/TinchoHub" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg class="icon-svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+            <path d="M9 18c-4.51 2-5-2-7-2" />
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <a href="#hero" class="footer-link">
+          <span>Volver arriba</span>
+          <svg class="icon-svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m5 12 7-7 7 7" />
+            <path d="M12 19V5" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
